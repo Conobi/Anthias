@@ -263,14 +263,14 @@
     state: present
   when: ansible_architecture == "x86_64"
 
-- name: Add Docker apt key (Raspberry Pi)
-  ansible.builtin.apt_key:
-    url: https://download.docker.com/linux/raspbian/gpg
-    state: present
-  when: |
-    ansible_architecture == "aarch64" or
-    ansible_architecture == "armv7l" or
-    ansible_architecture == "armv6l"
+# - name: Add Docker apt key (Raspberry Pi)
+#   ansible.builtin.apt_key:
+#     url: https://download.docker.com/linux/raspbian/gpg
+#     state: present
+#   when: |
+#     ansible_architecture == "aarch64" or
+#     ansible_architecture == "armv7l" or
+#     ansible_architecture == "armv6l"
 
 - name: Get Debian name
   ansible.builtin.command: lsb_release -cs
